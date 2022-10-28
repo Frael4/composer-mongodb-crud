@@ -1,0 +1,20 @@
+{
+    "name": "frael/composer-mongo-mongodb",
+    "description": "composer mongo/mongo",
+    "type": "project",
+    "require": {
+        "mongodb/mongodb": "v1.12.x-dev"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Frael\\ComposerMongoMongodb\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Frael"
+        }
+    ],
+    "minimum-stability": "dev"
+}
