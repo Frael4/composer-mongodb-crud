@@ -3,7 +3,8 @@
     "description": "composer mongo/mongo",
     "type": "project",
     "require": {
-        "mongodb/mongodb": "v1.12.x-dev"
+        "mongodb/mongodb": "v1.12.x-dev",
+        "twbs/bootstrap": "dev-main"
     },
     "license": "MIT",
     "autoload": {
