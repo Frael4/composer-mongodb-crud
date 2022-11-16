@@ -55,7 +55,7 @@ class UsuarioController
     public function getUsuarios()
     {
         $usuarios = $this->model->getUsuarios();
-        print_r($usuarios);
-       /*  include_once './src/views/usuario/lista.php'; */
+        /* print_r($usuarios); */
+        include_once './src/views/usuario/lista.php';
     }
 }
