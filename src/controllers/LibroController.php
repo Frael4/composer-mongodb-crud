@@ -46,10 +46,13 @@ class LibroController {
         include ('./src/views/listadoLibros.php');
     }
 
+    //Editar
     public static function deleteLibro()
     {
         $data = json_decode(file_get_contents('php://input'), true);
 
         /* $res = self::$model::deleteLibro(); */
     }
+
+    
 }

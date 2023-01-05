@@ -4,7 +4,9 @@
     "type": "project",
     "require": {
         "mongodb/mongodb": "v1.12.x-dev",
-        "twbs/bootstrap": "dev-main"
+        "twbs/bootstrap": "dev-main",
+        "dompdf/dompdf": "dev-master",
+        "phpoffice/phpspreadsheet": "dev-NumberFormatMask-Helpers"
     },
     "license": "MIT",
     "autoload": {

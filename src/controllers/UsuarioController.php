@@ -56,6 +56,24 @@ class UsuarioController
     {
         $usuarios = $this->model->getUsuarios();
         /* print_r($usuarios); */
+        $py = $usuarios->toArray();
+        $total_regitros = 1;
+        $cantxpagina = 10;
+
+        $paginas = ceil( $total_regitros / $cantxpagina );
+
         include_once './src/views/usuario/lista.php';
+    }
+
+    public function downLoadExcel()
+    {
+        $users = $this->model->getUsuarios();
+        include ('./src/reportes/excel/rptUsuarios.php');
+    }
+
+    public function downLoadPDF()
+    {
+        $users = $this->model->getUsuarios();
+        include ('./src/reportes/pdf/rptUsuarios.php');
     }
 }

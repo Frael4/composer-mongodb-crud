@@ -3,19 +3,7 @@ require_once './src/views/components/header.php';
 ?>
 
 <div class="container">
-    <!-- <?php foreach ($usuarios as $user) : ?>
-        <ul>
-            <li>Nombre :<?php echo $user->nombre ?></li>
-            <li>Correo :<?php echo $user->correo ?></li>
-            <li>Contraseña :<?php echo $user->contraseña ?></li>
-            <?php foreach ($user->foto->jsonSerialize() as $foto) : ?>
-                <li>Foto :<?php echo $foto->file_name ?></li>
-                <li>Foto :<?php echo $foto->file_size ?></li>
-                <li>Foto :<?php echo $foto->file_tmp ?></li>
-                <li>Foto :<?php echo $foto->file_type ?></li>
-            <?php endforeach ?>
-        </ul>
-    <?php endforeach ?> -->
+
 
     <!-- Bootstrap 3.3.4 -->
     <!-- <div class="panel-group" id="accordion" role="tablist">
@@ -53,7 +41,7 @@ require_once './src/views/components/header.php';
                 </div>
             </div>
             <div class="col-4 row">
-            <label class="col-4 col-form-label" for="cbFiltro">Ocupacion:</label>
+                <label class="col-4 col-form-label" for="cbFiltro">Ocupacion:</label>
                 <div class="col-8">
                     <select id="cbFiltro" class="form-select" type="text" value="">
                         <option selected class="text-muted">Seleccione...</option>
@@ -67,85 +55,135 @@ require_once './src/views/components/header.php';
     </div>
 
     <div class="card card-body shadow-sm">
-        <div class="card-title">
-            <h2>Usuarios</h2>
-        </div>
-        <div class="accordion" id="accordionListadoUsuarios">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="">
-                    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-controls="panelsStayOpen-collapseOne">
-                        <div class="col-2">
-                            <strong>Usuario:</strong> @Juan
-                        </div>
-                        <div class="col-2">
-                            <strong>Ultima vez:</strong> 2022-11-2
-                        </div>
-                    </div>
-                </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
-                        <div class="row gy-2 gx-3 justify-content-center">
-                            <div class="col-3">
-                                <img style="width: 100px; " class="shadow img-fluid rounded mx-auto d-block" src="../../../src/public/img/bear.jpeg" alt="foto">
-                            </div>
+        <div class="card-title row justify-content-between">
+            <h2 class="col-auto">Usuarios</h2>
 
-                            <div class="col-3 shadow-sm p-2">
-                                <strong>Nombre Completo:</strong>
-                                <label for="">Juan Perez</label>
-                            </div>
-                            <div class="col-3 shadow-sm p-2">
-                                <strong>Ocupacion:</strong>
-                                <label for="">Estudiante</label>
-                            </div>
-                            <div class="col-3 shadow-sm p-2">
-                                <strong>Residencia:</strong>
-                                <label for="">Nevada US</label>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse1" aria-controls="panelsStayOpen-collapseOne">
-                        <div class="row justify-content-center">
-                            <div class="col-auto">
-                                Nombre: Juan
-
-                            </div>
-                            <div class="col-auto">
-                                Apellido : Perez
-                            </div>
-                        </div>
-                    </div>
-                </h2>
-                <div id="panelsStayOpen-collapse1" class="accordion-collapse collapse " aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
-                        <div class="row gy-2 gx-3 justify-content-center">
-                            <div class="col-auto">
-                                <img style="width: 100px; " class="shadow img-fluid rounded mx-auto d-block" src="../../imagenes/activosfijos.png" alt="foto">
-                            </div>
-
-                            <div class="col-auto">
-                                <input type="text">
-                                <label for="">Etiqute</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text">
-                                <label for="">Etiqute</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text">
-                                <label for="">Etiqute</label>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+            <div class="col-auto align-self-end input-form">
+                <button class="btn btn-outline-warning "><a class="nav-link" href="/index.php?c=Usuario&m=downloadPDF">PDF</a></button>
+                <button class="btn btn-outline-success "><a class="nav-link" href="/index.php?c=Usuario&m=downLoadExcel">Excel</a></button>
             </div>
         </div>
+
+        <div class="accordion mb-2" id="accordionListadoUsuarios">
+            <?php foreach ($py as $user) : ?>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="">
+                        <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse<?php echo $user->_id ?>" aria-controls="panelsStayOpen-collapseOne">
+                            <div class="col-auto">
+                                <img style="width: 50px; height:auto" class="circular--square d-block" src="../../../src/public/img/bear.jpeg" alt="foto">
+                            </div>
+                            <div class="row ">
+                                <div class="col-auto mx-2">
+                                    <strong><?php echo $user->nombre ?></strong>
+                                </div>
+                                <div class="col-auto ">
+                                    <strong>Ultima vez:</strong> 2022-11-2
+                                </div>
+                            </div>
+                        </div>
+                    </h2>
+                    <div id="panelsStayOpen-collapse<?php echo $user->_id ?>" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+
+                            <div class="row  mx-auto ">
+                                <div class="col  -primary ">
+
+                                    <div class="row justify-content-center">
+                                        <img style="width:  1200px; " class="  " src="../../../src/public/img/bear.jpeg" alt="foto">
+
+                                    </div>
+                                </div>
+
+                                <div class="col -danger p-2">
+                                    <div class="col-auto  -danger row mx-2 ">
+                                        <strong>Nombre Completo</strong>
+                                        <label for="">Juan Perez</label>
+                                    </div>
+                                    <div class="col-auto row mx-2">
+                                        <strong>Biografia</strong>
+                                        <p>
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati vero neque enim saepe iusto
+                                            sint,
+                                            😊😂🤣🎶🎂🎉🐱‍🐉🐱‍👓🐱‍🚀🤳🐱‍👤🐱‍🏍
+                                        </p>
+                                    </div>
+
+                                </div>
+                                <div class="col  -danger p-2">
+                                    <div class="col row mx-2  -danger">
+                                        <strong class="">Nombre de Usuario</strong>
+                                        <label for="">@Skyler</label>
+                                    </div>
+                                    <div class="col row mx-2">
+                                        <strong>Ocupacion</strong>
+                                        <label for="">Estudiante</label>
+                                    </div>
+
+                                    <div class="col row mx-2">
+                                        <strong>Fecha Nacimiento</strong>
+                                        <label for="">July 8, 2022</label>
+                                    </div>
+                                    <div class="col row mx-2">
+                                        <strong>Ciuad</strong>
+                                        <label for="">Amsterdan</label>
+                                    </div>
+                                    <div class="col row mx-2 -success">
+                                        <strong>Residencia</strong>
+                                        <label for="">Nevada US</label>
+                                    </div>
+                                </div>
+                                <div class="col  -info p-2">
+
+                                    <div class="row">
+                                        <div class="col row mx-2   -success ">
+                                            <strong>Correo</strong>
+                                            <label for="">Skyler@algomial.com</label>
+                                        </div>
+                                        <div class="col-auto row mx-2  -success ">
+                                            <strong>Ocupacion</strong>
+                                            <label for="">Estudiante</label>
+                                        </div>
+                                        <div class="row align-items-center -danger mt-5 row mx-2">
+                                            <div class="col  -success ">
+                                                <div class="d-grid  align-items-centers">
+                                                    <button class="btn btn-success" type="button">Editar</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+
+        </div>
+
+        <nav class="row align-self-end" aria-label="...">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a href="" class="page-link">Previous</a>
+                </li>
+
+                <?php for ($i = 0; $i < $paginas; $i++) : ?>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#"><?php echo $i + 1  ?></a>
+                    </li>
+                <?php endfor ?>
+
+                <li class="page-item">
+                    <a class="page-link" href="">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 
 </div>

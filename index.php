@@ -1,7 +1,8 @@
 <?php
-/* error_reporting(0); */
+/* error_reporting(0); */ // 0 = no muestra advertencias
 require_once './vendor/autoload.php';
 require_once './src/config/database.php';
+
 
 $clase = $_GET['c'];
 $metodo = $_GET['m'];
