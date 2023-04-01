@@ -35,7 +35,7 @@ require_once './src/views/components/header.php';
         </form>
     </div>
 </div>
-<script text="javascript" src="./src/public/js/usuario.js"></script>
+<script text="javascript" src="./src/public/js/usuario/usuario.js"></script>
 
 <?php
 require_once './src/views/components/footer.php';
