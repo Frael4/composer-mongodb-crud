@@ -2,8 +2,9 @@
 
 use Frael\ComposerMongoMongodb\Libro;
 
-class LibroController {
-    
+class LibroController
+{
+
     private static $model;
 
     public function __construct()
@@ -14,7 +15,7 @@ class LibroController {
     public static function registro()
     {
         /* print_r($libros); */
-        include_once './src/views/index.php';
+        include_once './src/views/libro/libro.php';
     }
 
     public static function setLibro()
@@ -24,26 +25,28 @@ class LibroController {
         $descripcion = $_POST['descripcion'];
         $autor = $_POST['autor'];
         $fecha = $_POST['fecha'];
-                                        //  0   1   2   3   4  ->ID
-        /* $new = self::$model->setLibro(array($nombre, $precio, $descripcion, $autor, $fecha)) */
-        $new = self::$model->setLibro(array(
-            "nombre" => $nombre,
-            "precio" => $precio,
-            "descripcion" => $descripcion,
-            "autor" => $autor,
-            "fecha" => $fecha)
+
+        $new = self::$model->setLibro(
+            array(
+                "nombre" => $nombre,
+                "precio" => $precio,
+                "descripcion" => $descripcion,
+                "autor" => $autor,
+                "fecha" => $fecha
+            )
         );
 
-        if($new != null){
-            header('./index?c=Libro');
+        if ($new != null) {
+            header('Location: ./index?c=Libro');
         }
-        /* var_dump($new) ; */
+        //var_dump($new);
+       /*  include('./src/views/libro/libro.php'); */
     }
 
     public static function getLibros()
     {
         $libros = self::$model->getLibros();
-        include ('./src/views/listadoLibros.php');
+        include('./src/views/libro/listadoLibros.php');
     }
 
     //Editar
@@ -53,6 +56,4 @@ class LibroController {
 
         /* $res = self::$model::deleteLibro(); */
     }
-
-    
 }

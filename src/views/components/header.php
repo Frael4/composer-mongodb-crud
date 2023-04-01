@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/public/css/style.css">
     <link rel="stylesheet" href="/vendor/twbs/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/vendor/twbs/bootstrap-icons/font/bootstrap-icons.css">
     <title>Composer MongoDB</title>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/index.php?c=Libro">Libreria</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/index.php?c=Libro">Registrar</a>
+          <a class="nav-link" aria-current="page" href="/index.php?c=Libro">Registrar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/index.php?c=Libro&m=getLibros">Libros Registrados</a>
@@ -33,9 +34,6 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="?c=Usuario&m=getUsuarios">Lista de Usuarios</a></li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
       <form class="d-flex">

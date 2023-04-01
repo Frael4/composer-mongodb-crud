@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "61900dcfd5394364c5374395dd485148",
+    "content-hash": "a4b07daec90fc870fb188d493bbab30d",
     "packages": [
         {
             "name": "dompdf/dompdf",
@@ -1234,6 +1234,46 @@
                 "source": "https://github.com/twbs/bootstrap/tree/main"
             },
             "time": "2022-10-26T05:37:04+00:00"
+        },
+        {
+            "name": "twbs/bootstrap-icons",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/icons.git",
+                "reference": "f5621d468a5a1fb1ec14b9b10d86e9d8bfb21c19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/icons/zipball/f5621d468a5a1fb1ec14b9b10d86e9d8bfb21c19",
+                "reference": "f5621d468a5a1fb1ec14b9b10d86e9d8bfb21c19",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "Official open source SVG icon library for Bootstrap",
+            "homepage": "https://icons.getbootstrap.com/",
+            "keywords": [
+                "bootstrap",
+                "icon font",
+                "icons",
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/twbs/icons/issues",
+                "source": "https://github.com/twbs/icons/tree/main"
+            },
+            "time": "2023-03-27T16:14:22+00:00"
         }
     ],
     "packages-dev": [],
@@ -1243,7 +1283,8 @@
         "mongodb/mongodb": 20,
         "twbs/bootstrap": 20,
         "dompdf/dompdf": 20,
-        "phpoffice/phpspreadsheet": 20
+        "phpoffice/phpspreadsheet": 20,
+        "twbs/bootstrap-icons": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

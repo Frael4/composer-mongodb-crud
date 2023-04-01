@@ -1285,6 +1285,49 @@
                 "source": "https://github.com/twbs/bootstrap/tree/main"
             },
             "install-path": "../twbs/bootstrap"
+        },
+        {
+            "name": "twbs/bootstrap-icons",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/icons.git",
+                "reference": "f5621d468a5a1fb1ec14b9b10d86e9d8bfb21c19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/icons/zipball/f5621d468a5a1fb1ec14b9b10d86e9d8bfb21c19",
+                "reference": "f5621d468a5a1fb1ec14b9b10d86e9d8bfb21c19",
+                "shasum": ""
+            },
+            "time": "2023-03-27T16:14:22+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "Official open source SVG icon library for Bootstrap",
+            "homepage": "https://icons.getbootstrap.com/",
+            "keywords": [
+                "bootstrap",
+                "icon font",
+                "icons",
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/twbs/icons/issues",
+                "source": "https://github.com/twbs/icons/tree/main"
+            },
+            "install-path": "../twbs/bootstrap-icons"
         }
     ],
     "dev": true,

@@ -2,36 +2,20 @@
 require_once './src/views/components/header.php';
 ?>
 
+
 <div class="container">
-
-
-    <!-- Bootstrap 3.3.4 -->
-    <!-- <div class="panel-group" id="accordion" role="tablist">
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="heading">
-                <div class="panel-title">
-                    <a href="#collapse" data-bs-toggle="collapse" data-bs-parent="#accordion">
-                        Encabezado
-                    </a>
-                </div>
-            </div>
-            <div id="collapse" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro quia perspiciatis earum et odit sapiente, facere molestias labore nulla reprehenderit consequuntur praesentium a in perferendis libero rem optio qui quasi?
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <div class="card card-body shadow-sm p-3 my-2">
         <!-- <button class="btn btn-primary btn-block">Crear</button> -->
         <div class="row">
-            <div class="col-4 ">
+            <div class="col-sm-4 col-md-4">
                 <input class="form-control" type="text" value="" placeholder="Busqueda global...">
             </div>
-            <div class="col-4 row form-group">
-                <label class="col-3 col-form-label" for="cbFiltro">Ciudad:</label>
-                <div class="col-8">
+            <div class=" col-sm-4 col-md-4 row form-group mb-2">
+                <div class="col-sm-3 col-md-3">
+                    <label class="col-form-label" for="cbFiltro">Ciudad:</label>
+                </div>
+                <div class="col-sm-8 col-md-8">
                     <select id="cbFiltro" class="form-select" type="text" value="">
                         <option selected class="text-muted">Seleccione...</option>
                         <option value="">Nevada</option>
@@ -40,9 +24,11 @@ require_once './src/views/components/header.php';
                     </select>
                 </div>
             </div>
-            <div class="col-4 row">
-                <label class="col-4 col-form-label" for="cbFiltro">Ocupacion:</label>
-                <div class="col-8">
+            <div class=" col-sm-4 col-md-4 form-group row">
+                <div class="col-sm-4">
+                    <label class="col-form-label" for="cbFiltro">Ocupacion:</label>
+                </div>
+                <div class="col-sm-8  col-md-8">
                     <select id="cbFiltro" class="form-select" type="text" value="">
                         <option selected class="text-muted">Seleccione...</option>
                         <option value="">Arquitecto</option>
@@ -56,7 +42,7 @@ require_once './src/views/components/header.php';
 
     <div class="card card-body shadow-sm">
         <div class="card-title row justify-content-between">
-            <h2 class="col-auto">Usuarios</h2>
+            <h2 class="col-auto fw-bold">Usuarios</h2>
 
             <div class="col-auto align-self-end input-form">
                 <button class="btn btn-outline-warning "><a class="nav-link" href="/index.php?c=Usuario&m=downloadPDF">PDF</a></button>
@@ -65,13 +51,13 @@ require_once './src/views/components/header.php';
         </div>
 
         <div class="accordion mb-2" id="accordionListadoUsuarios">
-            <?php foreach ($py as $user) : ?>
+            <?php foreach ($itemFiltrados as $user) : ?>
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="">
                         <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse<?php echo $user->_id ?>" aria-controls="panelsStayOpen-collapseOne">
                             <div class="col-auto">
-                                <img style="width: 50px; height:auto" class="circular--square d-block" src="../../../src/public/img/bear.jpeg" alt="foto">
+                                <img style="width: 50px; height: 50px;" class="circular--square d-block" src="./?c=Usuario&m=getImagen&id=<?php echo $user->_id; ?>" alt="foto">
                             </div>
                             <div class="row ">
                                 <div class="col-auto mx-2">
@@ -87,22 +73,20 @@ require_once './src/views/components/header.php';
                         <div class="accordion-body">
 
                             <div class="row  mx-auto ">
-                                <div class="col  -primary ">
-
+                                <div class="col">
                                     <div class="row justify-content-center">
-                                        <img style="width:  1200px; " class="  " src="../../../src/public/img/bear.jpeg" alt="foto">
-
+                                        <img style="width:  1200px; " class="" src="./?c=Usuario&m=getImagen&id=<?php echo $user->_id; ?>" alt="foto">
                                     </div>
                                 </div>
 
-                                <div class="col -danger p-2">
-                                    <div class="col-auto  -danger row mx-2 ">
+                                <div class="col p-2">
+                                    <div class="col-auto  row mx-2 ">
                                         <strong>Nombre Completo</strong>
-                                        <label for="">Juan Perez</label>
+                                        <label for=""><?php echo $user->nombre . ' ' . $user->apellido; ?></label>
                                     </div>
                                     <div class="col-auto row mx-2">
                                         <strong>Biografia</strong>
-                                        <p>
+                                        <p contenteditable="true">
                                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati vero neque enim saepe iusto
                                             sint,
                                             😊😂🤣🎶🎂🎉🐱‍🐉🐱‍👓🐱‍🚀🤳🐱‍👤🐱‍🏍
@@ -110,14 +94,10 @@ require_once './src/views/components/header.php';
                                     </div>
 
                                 </div>
-                                <div class="col  -danger p-2">
-                                    <div class="col row mx-2  -danger">
+                                <div class="col p-2">
+                                    <div class="col row mx-2 ">
                                         <strong class="">Nombre de Usuario</strong>
-                                        <label for="">@Skyler</label>
-                                    </div>
-                                    <div class="col row mx-2">
-                                        <strong>Ocupacion</strong>
-                                        <label for="">Estudiante</label>
+                                        <label for=""><?php echo $user->usuario; ?></label>
                                     </div>
 
                                     <div class="col row mx-2">
@@ -133,21 +113,23 @@ require_once './src/views/components/header.php';
                                         <label for="">Nevada US</label>
                                     </div>
                                 </div>
-                                <div class="col  -info p-2">
+                                <div class="col p-2">
 
                                     <div class="row">
-                                        <div class="col row mx-2   -success ">
+                                        <div class="col row mx-2 ">
                                             <strong>Correo</strong>
-                                            <label for="">Skyler@algomial.com</label>
+                                            <label for=""><?php echo $user->correo; ?></label>
                                         </div>
-                                        <div class="col-auto row mx-2  -success ">
+                                        <div class="col-auto row mx-2 ">
                                             <strong>Ocupacion</strong>
                                             <label for="">Estudiante</label>
                                         </div>
-                                        <div class="row align-items-center -danger mt-5 row mx-2">
-                                            <div class="col  -success ">
+                                        <div class="row align-items-center mt-5 row mx-2">
+                                            <div class="col">
                                                 <div class="d-grid  align-items-centers">
-                                                    <button class="btn btn-success" type="button">Editar</button>
+                                                    <form action="./index?c=Usuario&m=editUsuario" method="post">
+                                                        <button value="<?php echo $user->_id ?>" name="id" class="btn btn-success" type="submit">Editar</button>
+                                                    </form>
                                                 </div>
                                             </div>
 
@@ -158,8 +140,6 @@ require_once './src/views/components/header.php';
 
                             </div>
 
-
-
                         </div>
                     </div>
                 </div>
@@ -169,25 +149,24 @@ require_once './src/views/components/header.php';
 
         <nav class="row align-self-end" aria-label="...">
             <ul class="pagination">
-                <li class="page-item disabled">
-                    <a href="" class="page-link">Previous</a>
+                <li class="page-item <?php echo $paginaActual == 1 ? "disabled" : ""?>">
+                    <a href="./index.php?c=Usuario&m=getUsuarios&paginaActual=<?php echo $paginaActual - 1 ?>"class="page-link">Previous</a>
                 </li>
 
                 <?php for ($i = 0; $i < $paginas; $i++) : ?>
-                    <li class="page-item active" aria-current="page">
-                        <a class="page-link" href="#"><?php echo $i + 1  ?></a>
+                    <li class="page-item <?php echo $paginaActual == $i + 1 ? 'active' : '' ?>" aria-current="page">
+                        <a class="page-link" href="./index.php?c=Usuario&m=getUsuarios&paginaActual=<?php echo $i + 1 ?>"> <?php echo $i + 1  ?></a>
                     </li>
                 <?php endfor ?>
 
                 <li class="page-item">
-                    <a class="page-link" href="">Next</a>
+                    <a class="page-link <?php echo $paginaActual >= $paginas ? "disabled" : ""?>" href="./index.php?c=Usuario&m=getUsuarios&paginaActual=<?php echo $paginaActual + 1 ?>">Next</a>
                 </li>
             </ul>
         </nav>
     </div>
 
 </div>
-
 
 <?php
 require_once './src/views/components/footer.php';

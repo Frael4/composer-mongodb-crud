@@ -3,7 +3,7 @@
         'name' => 'frael/composer-mongo-mongodb',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'cce49142ec91e8d3e5986e38cdd5bed6dc5f5be9',
+        'reference' => 'f7f0439894f3a56360a68db27305a98f68654cf7',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -33,7 +33,7 @@
         'frael/composer-mongo-mongodb' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'cce49142ec91e8d3e5986e38cdd5bed6dc5f5be9',
+            'reference' => 'f7f0439894f3a56360a68db27305a98f68654cf7',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -199,6 +199,17 @@
             'reference' => 'a7a2253507ccaf606eb18878229c5bc4c0d9087b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../twbs/bootstrap',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
+        'twbs/bootstrap-icons' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'f5621d468a5a1fb1ec14b9b10d86e9d8bfb21c19',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../twbs/bootstrap-icons',
             'aliases' => array(
                 0 => '9999999-dev',
             ),

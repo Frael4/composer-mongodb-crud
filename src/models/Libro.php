@@ -4,8 +4,7 @@ namespace Frael\ComposerMongoMongodb;
 
 use DateTime;
 use Conexion;
-use Exception;
-use MongoDB\BSON\ObjectId;
+
 use MongoDB\BSON\UTCDateTime;
 
 class Libro

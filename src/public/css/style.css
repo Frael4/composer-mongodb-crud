@@ -1,6 +1,23 @@
 .circular--square {
-    border-top-left-radius: 50% 50%;
-    border-top-right-radius: 50% 50%;
-    border-bottom-right-radius: 50% 50%;
-    border-bottom-left-radius: 50% 50%;
-  }
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  transition: 0.3s all ease;
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.circular--square:hover {
+  background: rgba(173, 172, 172, 0.17);
+  opacity: 1;
+}
+
+.avatar-user {
+  border-radius: 50% !important;
+  width: 250px;
+  height: 250px;
+  box-shadow: inset;
+}
